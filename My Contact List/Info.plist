@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Use an existing photo?</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Would you like to take a picture of your contact?</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We need to know where we&apos;re at!</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>

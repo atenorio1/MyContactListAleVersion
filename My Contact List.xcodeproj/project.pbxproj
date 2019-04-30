@@ -8,13 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		FFB63D5B225A8BDA00F6C556 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB63D5A225A8BDA00F6C556 /* AppDelegate.swift */; };
-		FFB63D5D225A8BDA00F6C556 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB63D5C225A8BDA00F6C556 /* FirstViewController.swift */; };
-		FFB63D5F225A8BDA00F6C556 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB63D5E225A8BDA00F6C556 /* SecondViewController.swift */; };
 		FFB63D62225A8BDA00F6C556 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFB63D60225A8BDA00F6C556 /* Main.storyboard */; };
 		FFB63D64225A8BDA00F6C556 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFB63D63225A8BDA00F6C556 /* Assets.xcassets */; };
 		FFB63D67225A8BDA00F6C556 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFB63D65225A8BDA00F6C556 /* LaunchScreen.storyboard */; };
 		FFB63D72225A8BDA00F6C556 /* My_Contact_ListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB63D71225A8BDA00F6C556 /* My_Contact_ListTests.swift */; };
 		FFB63D7D225A8BDA00F6C556 /* My_Contact_ListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB63D7C225A8BDA00F6C556 /* My_Contact_ListUITests.swift */; };
+		FFB63D8B225AA19100F6C556 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB63D8A225AA19100F6C556 /* ContactsViewController.swift */; };
+		FFB63D8D225AA1D000F6C556 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB63D8C225AA1D000F6C556 /* MapViewController.swift */; };
+		FFB63D8F225AA40700F6C556 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB63D8E225AA40700F6C556 /* SettingsViewController.swift */; };
+		FFCF7A7122629D67000A1661 /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCF7A7022629D67000A1661 /* DateViewController.swift */; };
+		FFCF7A732262AF07000A1661 /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCF7A722262AF07000A1661 /* ContactsTableViewController.swift */; };
+		FFCF7A7522690C80000A1661 /* LocationDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCF7A7422690C80000A1661 /* LocationDemoViewController.swift */; };
+		FFCF7A79226A6DCF000A1661 /* MapPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCF7A78226A6DCF000A1661 /* MapPoint.swift */; };
+		FFE5CF10225FA93F00F59394 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE5CF0F225FA93F00F59394 /* Constants.swift */; };
+		FFE5CF13225FB84300F59394 /* MyContactListModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FFE5CF11225FB84300F59394 /* MyContactListModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,8 +44,6 @@
 /* Begin PBXFileReference section */
 		FFB63D57225A8BDA00F6C556 /* My Contact List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Contact List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFB63D5A225A8BDA00F6C556 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FFB63D5C225A8BDA00F6C556 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		FFB63D5E225A8BDA00F6C556 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		FFB63D61225A8BDA00F6C556 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FFB63D63225A8BDA00F6C556 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FFB63D66225A8BDA00F6C556 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +54,15 @@
 		FFB63D78225A8BDA00F6C556 /* My Contact ListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "My Contact ListUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFB63D7C225A8BDA00F6C556 /* My_Contact_ListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_Contact_ListUITests.swift; sourceTree = "<group>"; };
 		FFB63D7E225A8BDA00F6C556 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFB63D8A225AA19100F6C556 /* ContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
+		FFB63D8C225AA1D000F6C556 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		FFB63D8E225AA40700F6C556 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		FFCF7A7022629D67000A1661 /* DateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
+		FFCF7A722262AF07000A1661 /* ContactsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
+		FFCF7A7422690C80000A1661 /* LocationDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDemoViewController.swift; sourceTree = "<group>"; };
+		FFCF7A78226A6DCF000A1661 /* MapPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapPoint.swift; sourceTree = "<group>"; };
+		FFE5CF0F225FA93F00F59394 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		FFE5CF12225FB84300F59394 /* MyContactListModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyContactListModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +113,20 @@
 		FFB63D59225A8BDA00F6C556 /* My Contact List */ = {
 			isa = PBXGroup;
 			children = (
+				FFCF7A722262AF07000A1661 /* ContactsTableViewController.swift */,
+				FFCF7A7022629D67000A1661 /* DateViewController.swift */,
 				FFB63D5A225A8BDA00F6C556 /* AppDelegate.swift */,
-				FFB63D5C225A8BDA00F6C556 /* FirstViewController.swift */,
-				FFB63D5E225A8BDA00F6C556 /* SecondViewController.swift */,
+				FFE5CF11225FB84300F59394 /* MyContactListModel.xcdatamodeld */,
 				FFB63D60225A8BDA00F6C556 /* Main.storyboard */,
 				FFB63D63225A8BDA00F6C556 /* Assets.xcassets */,
 				FFB63D65225A8BDA00F6C556 /* LaunchScreen.storyboard */,
 				FFB63D68225A8BDA00F6C556 /* Info.plist */,
+				FFB63D8A225AA19100F6C556 /* ContactsViewController.swift */,
+				FFB63D8C225AA1D000F6C556 /* MapViewController.swift */,
+				FFB63D8E225AA40700F6C556 /* SettingsViewController.swift */,
+				FFE5CF0F225FA93F00F59394 /* Constants.swift */,
+				FFCF7A7422690C80000A1661 /* LocationDemoViewController.swift */,
+				FFCF7A78226A6DCF000A1661 /* MapPoint.swift */,
 			);
 			path = "My Contact List";
 			sourceTree = "<group>";
@@ -262,9 +283,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFB63D5F225A8BDA00F6C556 /* SecondViewController.swift in Sources */,
+				FFE5CF10225FA93F00F59394 /* Constants.swift in Sources */,
+				FFB63D8B225AA19100F6C556 /* ContactsViewController.swift in Sources */,
+				FFE5CF13225FB84300F59394 /* MyContactListModel.xcdatamodeld in Sources */,
 				FFB63D5B225A8BDA00F6C556 /* AppDelegate.swift in Sources */,
-				FFB63D5D225A8BDA00F6C556 /* FirstViewController.swift in Sources */,
+				FFCF7A7522690C80000A1661 /* LocationDemoViewController.swift in Sources */,
+				FFB63D8D225AA1D000F6C556 /* MapViewController.swift in Sources */,
+				FFCF7A7122629D67000A1661 /* DateViewController.swift in Sources */,
+				FFCF7A79226A6DCF000A1661 /* MapPoint.swift in Sources */,
+				FFCF7A732262AF07000A1661 /* ContactsTableViewController.swift in Sources */,
+				FFB63D8F225AA40700F6C556 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,6 +535,7 @@
 				FFB63D83225A8BDA00F6C556 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FFB63D84225A8BDA00F6C556 /* Build configuration list for PBXNativeTarget "My Contact ListTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +544,7 @@
 				FFB63D86225A8BDA00F6C556 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FFB63D87225A8BDA00F6C556 /* Build configuration list for PBXNativeTarget "My Contact ListUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,8 +553,22 @@
 				FFB63D89225A8BDA00F6C556 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FFE5CF11225FB84300F59394 /* MyContactListModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FFE5CF12225FB84300F59394 /* MyContactListModel.xcdatamodel */,
+			);
+			currentVersion = FFE5CF12225FB84300F59394 /* MyContactListModel.xcdatamodel */;
+			path = MyContactListModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FFB63D4F225A8BDA00F6C556 /* Project object */;
 }
