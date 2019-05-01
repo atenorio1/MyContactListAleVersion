@@ -28,52 +28,46 @@ class ContactsViewController: UIViewController, UITextFieldDelegate, DateControl
     @IBOutlet weak var btnChange: UIButton!
     @IBOutlet weak var imgContactPicture: UIImageView!
     @IBOutlet weak var lblPhone: UILabel!
+    @IBOutlet weak var txtPriority: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view.
         
         if currentContact != nil {
-            txtName.text = currentContact!.contactName
-            txtAddress.text = currentContact!.streetAddress
-            txtCity.text = currentContact!.city
-            txtState.text = currentContact!.state
-            txtZip.text = currentContact!.zipCode
-            txtPhone.text = currentContact!.phoneNumber
-            txtCell.text = currentContact!.cellNumber
-            txtEmail.text = currentContact!.email
-            let formatter = DateFormatter()
-            formatter.dateStyle = .short
+            txtName.text = currentContact!.title
+            txtPriority.text = currentContact!.priority
             
-            if currentContact!.birthday != nil {
-                lblBirthdate.text = formatter.string(from: currentContact!.birthday as! Date)
-            }
-            if let imageData = currentContact?.image as? Data {
-                imgContactPicture.image = UIImage(data: imageData)
+         
+            let df = DateFormatter()
+            df.dateFormat = "yyyy-MM-dd"
+            let currentDate = df.string(from:currentContact!.dateCreated! as Date)
+            if currentDate != nil{
+                lblBirthdate.text = currentDate
+            } else {
+                let df = DateFormatter()
+                df.dateFormat = "yyyy-MM-dd"
+                lblBirthdate.text = df.string(from:Date())
             }
         }
         
         changeEditMode(self)
         
-        let textFields: [UITextField] = [txtName, txtAddress, txtCity, txtState, txtZip, txtPhone, txtCell, txtEmail]
+        let textFields: [UITextField] = [txtName, txtPriority]
         
         for textField in textFields {
             textField.addTarget(self, action: #selector(UITextFieldDelegate.textFieldShouldEndEditing(_:)), for: UIControlEvents.editingDidEnd)
         }
         
-        let longPress = UILongPressGestureRecognizer.init(target: self, action: #selector(callPhone(gesture:)))
-        lblPhone.addGestureRecognizer(longPress)
     }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        currentContact?.contactName = txtName.text
-        currentContact?.streetAddress = txtAddress.text
-        currentContact?.city = txtCity.text
-        currentContact?.state = txtState.text
-        currentContact?.zipCode = txtZip.text
-        currentContact?.cellNumber = txtCell.text
-        currentContact?.phoneNumber = txtPhone.text
-        currentContact?.email = txtEmail.text
+      
+        currentContact?.title = txtName.text
+        currentContact?.priority = txtPriority.text
+        currentContact?.dateCreated = Date() as NSDate
+        
         return true
     }
 
@@ -83,14 +77,13 @@ class ContactsViewController: UIViewController, UITextFieldDelegate, DateControl
     }
     
     @IBAction func changeEditMode(_ sender: Any) {
-        let textFields: [UITextField] = [txtName, txtAddress, txtCity, txtState, txtZip, txtPhone, txtCell, txtEmail]
+        let textFields: [UITextField] = [txtName, txtPriority]
         
         if sgmtEditMode.selectedSegmentIndex == 0 {
             for textField in textFields {
                 textField.isEnabled = false
                 textField.borderStyle = UITextBorderStyle.roundedRect
             }
-            btnChange.isHidden = true
             navigationItem.rightBarButtonItem = nil
         }
         
@@ -99,7 +92,6 @@ class ContactsViewController: UIViewController, UITextFieldDelegate, DateControl
                 textField.isEnabled = true
                 textField.borderStyle = UITextBorderStyle.roundedRect
             }
-            btnChange.isHidden = false
             navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(self.saveContact))
         }
     }
@@ -107,6 +99,7 @@ class ContactsViewController: UIViewController, UITextFieldDelegate, DateControl
     func saveContact() {
         
         if currentContact == nil {
+            currentContact?.dateCreated = Date() as NSDate
             let context = appDelegate.persistentContainer.viewContext
             currentContact = Contact(context: context)
         }
@@ -118,7 +111,7 @@ class ContactsViewController: UIViewController, UITextFieldDelegate, DateControl
     
     func dateChanged(date: Date) {
         if currentContact != nil {
-            currentContact?.birthday = date as NSDate?
+            currentContact?.dateCreated = date as NSDate?
             appDelegate.saveContext()
             let formatter  = DateFormatter()
             formatter.dateStyle = .short

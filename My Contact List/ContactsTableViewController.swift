@@ -41,6 +41,7 @@ class ContactsTableViewController: UITableViewController {
         let settings = UserDefaults.standard
         let sortField = settings.string(forKey: Constants.kSortField)
         let sortAscending = settings.bool(forKey: Constants.kSortDirectionAscending)
+        //let sortMedium = settings.bool(forKey: Constants.kSortMedium)
         
         // Set up Core Data Context
         let context = appDelegate.persistentContainer.viewContext
@@ -54,6 +55,7 @@ class ContactsTableViewController: UITableViewController {
         
         // To sort multiple fields, add more sort description to the array
         request.sortDescriptors = sortDescriptorArray
+        
         
         // Execute the request
         do {
@@ -90,8 +92,13 @@ class ContactsTableViewController: UITableViewController {
 
         // Configure the cell...
         let contact = contacts[indexPath.row] as? Contact
-        cell.textLabel?.text = contact?.contactName
-        cell.detailTextLabel?.text = contact?.city
+        
+        let test = "Test"
+        cell.textLabel?.text = contact?.title ?? test
+        
+        let defaultPriority = "1"
+       
+        cell.detailTextLabel?.text = contact?.priority ?? defaultPriority
         cell.accessoryType = UITableViewCellAccessoryType.detailDisclosureButton
         return cell
     }
@@ -117,7 +124,7 @@ class ContactsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedContact = contacts[indexPath.row] as? Contact
-        let name = selectedContact!.contactName!
+        let name = selectedContact!.title!
         let actionHandler = { (action:UIAlertAction!) -> Void in let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let controller = storyboard.instantiateViewController(withIdentifier: "ContactsController") as? ContactsViewController
             controller?.currentContact = selectedContact

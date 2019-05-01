@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:My Contact List.xcodeproj">
+      location = "self:/Users/danielkim/Documents/MyContactListAleVersion/MyNotesApp.xcodeproj">
    </FileRef>
 </Workspace>

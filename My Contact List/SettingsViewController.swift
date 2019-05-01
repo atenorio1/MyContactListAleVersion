@@ -13,8 +13,9 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
     @IBOutlet weak var pckSortField: UIPickerView!
     @IBOutlet weak var swAscending: UISwitch!
     @IBOutlet weak var lblBattery: UILabel!
+    //@IBOutlet weak var swMedium: UISwitch!
     
-    let sortOrderItems: Array<String> = ["contactName", "city", "birthday"]
+    let sortOrderItems: Array<String> = ["title", "priority", "dateCreated"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,9 +25,9 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
         pckSortField.delegate = self;
         
         UIDevice.current.isBatteryMonitoringEnabled = true
-        NotificationCenter.default.addObserver(self, selector: #selector(self.batteryChanged), name: Notification.Name.UIDeviceBatteryStateDidChange, object: nil)
+        /*NotificationCenter.default.addObserver(self, selector: #selector(self.batteryChanged), name: Notification.Name.UIDeviceBatteryStateDidChange, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.batteryChanged), name: Notification.Name.UIDeviceBatteryLevelDidChange, object: nil)
-        self.batteryChanged()
+        self.batteryChanged()*/
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,6 +39,7 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
         // Set the UI based on values in UserDefaults
         
         let settings = UserDefaults.standard
+     
         swAscending.setOn(settings.bool(forKey: Constants.kSortDirectionAscending), animated: true)
         
         let sortField = settings.string(forKey: Constants.kSortField)
@@ -90,7 +92,7 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
         settings.synchronize()
     }
     
-    func batteryChanged() {
+    /*func batteryChanged() {
         let device = UIDevice.current
         var batteryState: String
         switch(device.batteryState) {
@@ -107,7 +109,7 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
         let batteryLevel = String(format: "%.0f%%", batteryLevelPercent)
         let batteryStatus = "\(batteryLevel) (\(batteryState))"
         lblBattery.text = batteryStatus
-    }
+    }*/
     
     // MARK: UIPickerViewDelegate Methods
     
